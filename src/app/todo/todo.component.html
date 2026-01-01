@@ -9,7 +9,7 @@
       <button *ngIf="!isInEditMode" class="btn-block" mat-raised-button color="primary">
         Add Todo
       </button>
-      <button *ngIf="isInEditMode" class="btn-block" mat-raised-button color="primary">
+      <button *ngIf="isInEditMode" (click)="onUpdate()" class="btn-block" mat-raised-button color="accent">
         Update Todo
       </button>
     </div>
@@ -21,8 +21,10 @@
         >
           {{ todo.todoItem }}
           <div>
-            <button class="mr-3" mat-raised-button color="primary">Edit</button>
-            <button mat-raised-button color="accent">Update</button>
+            <button 
+            (click)="onEdit(todo)"
+            class="mr-3" mat-raised-button color="primary">Edit</button>
+            <button mat-raised-button color="warn">Delete</button>
           </div>
         </li>
       </ul>
