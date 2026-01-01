@@ -1,0 +1,31 @@
+<div class="container-fluid my-3">
+  <div class="row">
+    <div class="col-md-6 mb-2">
+      <div class="form-group">
+        <label for="todoItem"><strong>TodoItem</strong></label>
+        <input #todoItem type="text" class="form-control" />
+      </div>
+
+      <button *ngIf="!isInEditMode" class="btn-block" mat-raised-button color="primary">
+        Add Todo
+      </button>
+      <button *ngIf="isInEditMode" class="btn-block" mat-raised-button color="primary">
+        Update Todo
+      </button>
+    </div>
+    <div class="col-md-6">
+      <ul class="list-group">
+        <li
+          *ngFor="let todo of todoArr"
+          class="list-group-item d-flex justify-content-between"
+        >
+          {{ todo.todoItem }}
+          <div>
+            <button class="mr-3" mat-raised-button color="primary">Edit</button>
+            <button mat-raised-button color="accent">Update</button>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
