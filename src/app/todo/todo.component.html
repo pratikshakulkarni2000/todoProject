@@ -6,7 +6,7 @@
         <input #todoItem type="text" class="form-control" />
       </div>
 
-      <button *ngIf="!isInEditMode" class="btn-block" mat-raised-button color="primary">
+      <button *ngIf="!isInEditMode" (click)="onAdd()" class="btn-block" mat-raised-button color="primary">
         Add Todo
       </button>
       <button *ngIf="isInEditMode" (click)="onUpdate()" class="btn-block" mat-raised-button color="accent">

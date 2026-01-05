@@ -45,6 +45,23 @@ export class TodoComponent implements OnInit {
     todoId: 'T006'
   }
 ];
+onAdd(){
+  if(this.todoItem.nativeElement.value.length>0){
+    let todoObj:Itodo ={
+      todoItem: this.todoItem.nativeElement.value,
+      todoId: Date.now().toString()
+    }
+    this.todoItem.nativeElement.value=''
+    this.todoArr.push(todoObj)
+
+    this._snackBar.open(`The Todo Item Added Successfully !!!`, 'Close', {
+      horizontalPosition: 'right',
+      verticalPosition: 'bottom',
+      duration: 3000
+    })
+  }
+}
+
 
 editId !: string
 onEdit(todo: Itodo){
